@@ -8,7 +8,6 @@ export const imagerror = {
     // dom认为此时就是图片
     dom.src = dom.src || options.value // 初始化的时候 如果有值 则赋值 如果没值 则需要进行默认值赋值
     // 当图片有地址 但是地址没有加载成功的时候 会报错 会触发图片的一个事件 => onerror
-    // debugger
     dom.onerror = function() {
       // 当图片出现异常的时候 会将指令配置的默认图片设置为该图片的内容
       // dom可以注册error事件

@@ -115,3 +115,21 @@ export function param2Obj(url) {
   })
   return obj
 }
+
+/**
+ * 数组转树结构
+ */
+ export function ListToTree(list,rootValue) {
+  var tree = []
+  //首先遍历list  如果有rootValue的子集则进行递归，递归结果为item的children加入item，push到tree中
+  list.forEach(item=>{
+    if(item.pid === rootValue){
+      const children = ListToTree(list,item.id)
+      if(children.length){
+        item.children = children
+      }
+      tree.push(item)
+    }
+  })
+  return tree
+}

@@ -47,3 +47,8 @@
 .el-range-separator {
   box-sizing: content-box;
 }
+
+.disabled .el-upload--picture-card {
+     display: none !important;
+     background-color: red;
+ }

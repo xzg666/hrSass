@@ -15,7 +15,7 @@ service.interceptors.request.use(config => {
   // 注入token
   if (getToken()) {
     if (isTimeOut()) {
-      store.commit('user/logout')
+      store.dispatch('user/logoutAsync')
       router.push('/login')
       return Promise.reject(new Error('您的token已过期！'))
     }
